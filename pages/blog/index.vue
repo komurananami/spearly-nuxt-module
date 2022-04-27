@@ -10,7 +10,22 @@
         All the latest Tailwind CSS news, straight from the&nbsp;team.
       </p>
     </header>
+
     <div class="space-y-16 mx-auto max-w-7xl">
+      <spearly-content-list id="blog">
+        <template v-slot="item">
+          <blog-item
+            :key="item.content.values.title"
+            :title="item.content.values.title"
+            :description="item.content.values.description"
+            :date="item.content.values.date"
+            :slug="item.content.attributes.publicUid"
+          ></blog-item>
+        </template>
+      </spearly-content-list>
+    </div>
+
+    <!-- <div class="space-y-16 mx-auto max-w-7xl">
       <blog-item
         v-for="article in articles"
         :key="article.title"
@@ -19,31 +34,31 @@
         :date="article.date"
         :slug="article.slug"
       ></blog-item>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 export default {
-  async asyncData({ $content, params }) {
-    const articles = await $content("articles")
-      .only([
-        "title",
-        "description",
-        "img",
-        "slug",
-        "tag",
-        "author",
-        "date",
-        "draft",
-      ])
-      .sortBy("date", "asc")
-      .fetch();
+  // async asyncData({ $content, params }) {
+  //   const articles = await $content("articles")
+  //     .only([
+  //       "title",
+  //       "description",
+  //       "img",
+  //       "slug",
+  //       "tag",
+  //       "author",
+  //       "date",
+  //       "draft",
+  //     ])
+  //     .sortBy("date", "asc")
+  //     .fetch();
 
-    return {
-      articles,
-    };
-  },
+  //   return {
+  //     articles,
+  //   };
+  // },
   head: {
     title: "Md Solaiman | Blogs",
     meta: [

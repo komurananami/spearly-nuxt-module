@@ -27,7 +27,13 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ["@nuxt/postcss8", "@nuxt/image"],
+  buildModules: ["@nuxt/postcss8", "@nuxt/image", "@spearly/nuxt-module"],
+  spearly: {
+    options: {
+      apiKey: "8EhpZKa8-WVfz3W4gw213N0OfM_FglIdLAceX5aC_fY",
+    },
+    mode: "all",
+  },
   vite: {
     /* options for vite */
     // ssr: true // enable unstable server-side rendering for development (false by default)
