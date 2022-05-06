@@ -30,7 +30,7 @@ export default {
   buildModules: ["@nuxt/postcss8", "@nuxt/image", "@spearly/nuxt-module"],
   spearly: {
     options: {
-      apiKey: "8EhpZKa8-WVfz3W4gw213N0OfM_FglIdLAceX5aC_fY",
+      apiKey: process.env.SPEARLY_API_KEY,
     },
     mode: "all",
   },
