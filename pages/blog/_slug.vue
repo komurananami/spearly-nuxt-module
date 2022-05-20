@@ -33,10 +33,10 @@
           :src="content.values.image"
         />
 
-        <nuxt-content
+        <div
           class="prose min-w-full p-10 mx-auto"
-          :document="content.values.description"
-        />
+          v-html="content.values.body"
+        ></div>
       </template>
     </spearly-content>
   </div>

@@ -50,7 +50,6 @@ export default {
   methods: {
     formatDate(date) {
       const options = { year: "numeric", month: "long", day: "numeric" };
-      console.log("slugggggggggg", this.slug);
       return new Date(date).toLocaleDateString("en", options);
     },
   },
